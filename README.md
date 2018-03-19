@@ -1,5 +1,5 @@
 # Fashion Design Process Management
-(Original repository: https://github.com/makkelip/SoftWear-FDPM)
+<em>(Original repository: https://github.com/makkelip/SoftWear-FDPM)</em> <br />
 Metropolia software engineering school project done by Team SoftWear. Fashion Design Process Management (FDPM) is an application to aid and streamline fashion design process and to have all the information in one place and available everywhere.
 FDPM is a web application running in the browser and backend is handled by Java-based application server GlassFish5.
 # Fashion Design Process Management (Python and Django Version)
