@@ -1,0 +1,78 @@
+:root {
+  --aside: inherit;
+  --aside-button: #0C1821;
+  --aside-content-link: #FFF;
+  --aside-content-link-hover: #D6F9DD;
+  --create-new: #0C1821;
+  --create-new-hover: #000;
+}
+
+/* Whole section layout */
+.section {
+  height: 100%;
+  display: grid;
+  grid-template-areas: "content aside";
+  grid-template-columns: 80% 20%;
+}
+
+/* Page header */
+.section-text-margin {
+  margin-left: 50px;
+}
+
+/* CONTENT */
+.section-content {
+  grid-area: content;
+  min-height: 100%;
+}
+
+/* ASIDE */
+.section-aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  background-color: var(--aside);
+ }
+
+/* Settings header */
+.aside-tab {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+/* All settings links together */
+.aside-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-height: 90%;
+  font-size: 0.9em;
+  overflow-y: scroll;
+}
+
+/* Single settings link */
+.aside-content > a {
+  background-color: var(--aside-button);
+  border: 1px solid var(--aside-button);
+  border-radius: 1px;
+  margin: 5px;
+  padding: 10px;
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Aside link colors */
+.aside-content a:link {
+  color: var(--aside-content-link);
+}
+
+.aside-content a:visited {
+  color: var(--aside-content-link);
+}
+
+.aside-content a:hover {
+  color: var(--aside-content-link-hover);
+}

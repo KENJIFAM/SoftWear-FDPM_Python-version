@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FDPM</title>
+  <meta charset="utf-8">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/basic.css">
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/content.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/createColors.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/createMaterials.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/form.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/slideshow.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewColors.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewCustomer.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewMaterials.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewSingleMaterial.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewProduct.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/viewProject.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/selectProduct.css" />
+  <link rel="stylesheet" type="text/css" href="WEB/CSS/index.css" />
+  <!-- JavaScript -->
+  <script src="WEB/libraries/jquery-3.3.1.min.js" type="text/javascript"></script>
+  <script src="WEB/JS/pageLoad.js" type="text/javascript"></script>
+  <script src="WEB/JS/globalVariables.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-logo">
+      <a href="#" class="js--button-home">FDPM</a>
+    </div>
+    <nav class="header-navigation">
+      <a href="#" class="js--button-select-customer">Customer</a>
+      <a href="#" class="js--button-select-project">Project</a>
+      <a href="#" class="js--button-select-product">Product</a>
+      <a href="#" class="js--button-view-colors">Color</a>
+      <a href="#" class="js--button-view-materials">Material</a>
+    </nav>
+  </header>
+
+  <!-- always include a div element + id inside the section element!
+         naming: js--file-name (example: <div id="js--select-customer">,
+         in selectCustomer.html document) -->
+  <section>
+    <div class="section section-text-margin" id="js--home">
+      <h1>Welcome!</h1>
+
+      <div id="slideshow-index">
+        <div>
+          <img src="WEB/libraries/image1.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image2.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image3.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image4.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image5.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image6.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image7.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image8.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image9.jpg">
+        </div>
+        <div>
+          <img src="WEB/libraries/image10.jpg">
+        </div>
+      </div>
+
+      <script>
+        $("#slideshow-index > div:gt(0)").hide();
+
+        setInterval(function() {
+          $('#slideshow-index > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow-index');
+        }, 3000);
+      </script>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2018 SoftWear</p>
+  </footer>
+</body>
+
+</html>
