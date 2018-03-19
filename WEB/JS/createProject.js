@@ -20,7 +20,7 @@ function postProject(name, startingDate, endingDate, description) {
     'description': description
   };
 
-  fetch('http://10.114.32.86:8080/project', {
+  fetch('http://10.114.32.86:8080/project/', {
       'method': 'POST',
       'body': JSON.stringify(data),
       'headers': new Headers({

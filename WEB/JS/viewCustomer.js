@@ -23,7 +23,7 @@ function showCustomer(customer) {
 
     // Delete customer
     document.getElementById("js--delete-customer").onclick = function() {
-        fetch("http://10.114.32.58:8080/FDPM-SERVER/sources/model.customer/" + customerId, {
+        fetch("http://10.114.32.86:8080/customer/" + customerId, {
             'method': 'DELETE'
         })
             .then(response => console.log('Success', response))
@@ -78,7 +78,7 @@ function putCustomer(name, email, description) {
   console.log(data);
   console.log("lala" + customerId);
 
-  fetch("http://10.114.32.58:8080/FDPM-SERVER/sources/model.customer/" + customerId, {
+  fetch("http://10.114.32.86:8080/customer/" + customerId +"/", {
     'method': 'PUT',
     'body': JSON.stringify(data),
     'headers': new Headers({'Content-Type': 'application/json'})

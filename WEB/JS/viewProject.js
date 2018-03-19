@@ -17,7 +17,7 @@ function showProject(project) {
     $('#name-info').html(`Name:<br/><p id="form-name">${project.name}</p>`);
     $('#startdate-info').html(`Starting date:<br/><p id="form-startdate">${project.startingDate}</p>`);
     $('#enddate-info').html(`Ending date:<br/><p id="form-enddate">${project.endingDate}</p>`);
-    $('#cover-percentage-info').html(`Cover percentage:<br/><p id="form-cover-percentage">${project.coverPercent}</p>`);
+    $('#cover-percentage-info').html(`Cover percentage:<br/><p id="form-cover-percentage">${project.coverPercentage}</p>`);
     $('#desc-info').html(`Description:<br/><p id="form-desc">${project.description}</p>`);
 
     // ProductID doesn't seem to work
@@ -26,7 +26,7 @@ function showProject(project) {
     // View colors
     let colorsContainer = $("#form-colors");
     colorsContainer.html("");
-    if(project.colors.length > 0) {
+    /*if(project.colors.length > 0) {
         for (let color of project.colors) {
           colorsContainer.append(
             `<div id="${color.id}" style="display:inline-block; margin: 8px; text-align: center;">
@@ -38,11 +38,11 @@ function showProject(project) {
         }
     }
 
-    console.log(colorList);
+    console.log(colorList);*/
 
     //Delete project
     document.getElementById("js--delete-project").onclick = function() {
-        fetch("http://10.114.32.58:8080/FDPM-SERVER/sources/model.project/" + projectId, {
+        fetch("http://10.114.32.86:8080/project/" + projectId, {
             'method': 'DELETE'
         })
             .then(response => console.log('Success', response))
@@ -58,7 +58,7 @@ function showProject(project) {
         $('#name-info').html(`Name:</br><input id="form-name" value='${project.name}' />`);
         $('#startdate-info').html(`Starting date:</br><input id="form-startdate" value='${project.startingDate}' />`);
         $('#enddate-info').html(`Ending date:</br><input id="form-enddate" value='${project.endingDate}'/>`);
-        $('#cover-percentage-info').html(`Cover percentage:</br><input id="form-cover-percentage" value='${project.coverPercent}' />`);
+        $('#cover-percentage-info').html(`Cover percentage:</br><input id="form-cover-percentage" value='${project.coverPercentage}' />`);
         $('#desc-info').html(`Description:</br><textarea id="form-desc" rows="6" cols="70">${project.description}</textarea>`);
 
         // Edit product doesn't work yet
@@ -130,7 +130,7 @@ function showProject(project) {
                         }
                     }
                 };
-                fetch("http://10.114.32.58:8080/FDPM-SERVER/sources/model.color")
+                fetch("http://10.114.32.86:8080/color")
                     .then(response => response.json())
                     .then(json => listColors(json))
                     .catch(error => console.log(error));
@@ -149,13 +149,12 @@ function showProject(project) {
         let name = $("#form-name").val();
         let startingDate = $("#form-startdate").val();
         let endingDate = $("#form-enddate").val();
-        let coverPercent = $("#form-cover-percentage").val();
+        let coverPercentage = $("#form-cover-percentage").val();
         let colors = colorList;
         let productsID = $("#form-products").val();
         let description = $("#form-desc").val();
 
-        putProject(name, startingDate, endingDate, coverPercent, colors, productsID, description);
-        console.log('save-p');
+        putProject(name, startingDate, endingDate, coverPercentage, colors, productsID, description);
 
 
         $('#js--button-edit-project').show();
@@ -166,21 +165,21 @@ function showProject(project) {
     };
 }
 
-function putProject(name, startingDate, endingDate, coverPercent, colors, productsID, description) {
+function putProject(name, startingDate, endingDate, coverPercentage, colors, productsID, description) {
 
   let data = {
     "id": projectId,
     "name": name,
     "startingDate": startingDate,
     "endingDate": endingDate,
-    "coverPercent": coverPercent,
+    "coverPercentage": coverPercentage,
     "description": description,
-    "colors": colors
+    /*"colors": colors*/
     /*"productsID": productsID*/
   }
   console.log(data);
 
-  fetch("http://10.114.32.58:8080/FDPM-SERVER/sources/model.project/" + projectId, {
+  fetch("http://10.114.32.86:8080/project/" + projectId + "/", {
     'method': 'PUT',
     'body': JSON.stringify(data),
     'headers': new Headers({'Content-Type': 'application/json'})
