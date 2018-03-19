@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     //Loads all customers page
     $("section").load("selectCustomer.html #js--select-customer");
-    $.getScript("JS/selectCustomer.js");
+    $.getScript("WEB/JS/selectCustomer.js");
   });
 });
 

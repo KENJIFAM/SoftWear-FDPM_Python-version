@@ -22,9 +22,9 @@ const loadSelectCustomer = () => {
             document.getElementById("" + customer.id).onclick = function() {
                 customerId = customer.id;
                 if ($('#js--view-customer').length == 0) {
-                  $.get('viewCustomer.html', function(data) {
+                  $.get('WEB/viewCustomer.html', function(data) {
                     section.append(data);
-                    $.getScript('JS/viewCustomer.js', () => loadCustomer());
+                    $.getScript('WEB/JS/viewCustomer.js', () => loadCustomer());
                   });
                 } else {
                   loadCustomer();

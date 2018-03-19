@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     //Loads all projects page
     $("section").load("selectProject.html #js--select-project");
-    $.getScript("JS/selectProject.js");
+    $.getScript("WEB/JS/selectProject.js");
   })
 });
 

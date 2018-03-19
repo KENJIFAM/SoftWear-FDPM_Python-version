@@ -4,7 +4,7 @@ $(function() {
   // create canvas and context objects
   var canvas = document.getElementById('picker');
   if (canvas === null) {
-    $.getScript('JS/createColors.js');
+    $.getScript('WEB/JS/createColors.js');
   } else {
     var ctx = canvas.getContext('2d');
 

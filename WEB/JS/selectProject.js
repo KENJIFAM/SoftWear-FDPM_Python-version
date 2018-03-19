@@ -24,9 +24,9 @@ const loadSelectProject = () => {
             document.getElementById("" + project.id).onclick = function() {
                 projectId = project.id;
                 if ($('#js--view-project').length == 0) {
-                  $.get('viewProject.html', function(data) {
+                  $.get('WEB/viewProject.html', function(data) {
                     section.append(data);
-                    $.getScript('JS/viewProject.js', () => loadProject());
+                    $.getScript('WEB/JS/viewProject.js', () => loadProject());
                   });
                 } else {
                   loadProject();

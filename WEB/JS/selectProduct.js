@@ -24,11 +24,11 @@ let addAllProducts = function(json) {
     $('body').on('click', '#' + product.id, function(event) {
       event.preventDefault();
       if ($('#js--view-product').length == 0) {
-        $.get('viewProduct.html', function(data) {
+        $.get('WEB/viewProduct.html', function(data) {
           section.append(data);
           productId = product.id;
-          $.getScript('JS/viewProduct.js');
-          $.getScript('JS/editProduct2.js', () => loadProduct());
+          $.getScript('WEB/JS/viewProduct.js');
+          $.getScript('WEB/JS/editProduct2.js', () => loadProduct());
           loadSection($('#js--view-product'));
         });
       } else {
